@@ -430,13 +430,53 @@ if db_datetime.tzinfo is None:
 3. **Index Out of Bounds**: `getLatestDecision()` handles empty/small DataFrames gracefully
 4. **Timezone Comparison Errors**: Use `datetime.now(timezone.utc)` instead of `datetime.utcnow()`, and handle timezone-naive datetimes from database
 
+## Portfolio Visualization Dashboard
+
+The system includes a web-based dashboard for monitoring bot performance and portfolio metrics.
+
+### Overview Dashboard
+
+The overview page displays a comprehensive table of all trading bots with key performance metrics:
+
+![Portfolio Overview](docs/overview.png)
+
+The dashboard shows:
+- **Current Worth**: Real-time portfolio value
+- **Total Return %**: Overall return since inception
+- **Annualized Return %**: Yearly return projection
+- **Sharpe Ratio**: Risk-adjusted return metric
+- **Sortino Ratio**: Downside risk-adjusted return
+- **Max Drawdown %**: Largest peak-to-trough decline
+- **Volatility %**: Portfolio price fluctuation
+- **Total Trades**: Number of executed trades
+- **Start Date**: Bot initialization date
+
+### Bot Detail Page
+
+Clicking on any bot from the overview opens a detailed performance page with:
+
+![Bot Detail Page](docs/detailpage.png)
+
+The detail page includes:
+- **Key Performance Indicators**: Total return, annualized return, Sharpe ratio, Sortino ratio, Calmar ratio, max drawdown, and volatility
+- **Portfolio Value Chart**: Time series visualization of portfolio value over time
+- **Daily Returns Distribution**: Histogram showing return frequency
+- **Monthly Returns Heatmap**: Calendar view of monthly performance
+- **Drawdown Chart**: Visual representation of portfolio drawdowns over time
+- **Current Holdings Table**: Real-time portfolio composition
+- **Trade History**: Complete log of all executed trades
+
+### Accessing the Dashboard
+
+The visualization dashboard is deployed as part of the Helm chart and accessible via the configured service. See the [Deployment](#deployment) section for setup instructions.
+
 ## Documentation
 
 ### Online Documentation
 
 A comprehensive documentation site is automatically deployed to GitHub Pages:
 
-- **Live Site**: `https://your-username.github.io/tradingbot25/` (after setup)
+- **Live Site**: [https://justinguese.github.io/python_tradingbot_framework/](https://justinguese.github.io/python_tradingbot_framework/)
 - **MkDocs Site**: Auto-generated from code docstrings and markdown guides
 - **API Reference**: Complete API documentation for all classes and methods
 - **Guides**: Step-by-step tutorials and best practices

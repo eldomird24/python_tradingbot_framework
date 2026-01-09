@@ -57,6 +57,12 @@ bot.sell(symbol="QQQ", quantityUSD=500)
 bot.rebalancePortfolio({"QQQ": 0.8, "GLD": 0.1, "USD": 0.1})
 ```
 
+### Performance Visualization
+
+Monitor all your bots with a comprehensive web dashboard showing portfolio performance, risk metrics, and trade history:
+
+![Portfolio Overview](overview.png)
+
 ### Hyperparameter Tuning
 
 Optimize your bot's parameters automatically:

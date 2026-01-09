@@ -89,7 +89,48 @@ worth = calculate_portfolio_worth(bot.dbBot, bot._data_service)
 print(f"Portfolio worth: ${worth:,.2f}")
 ```
 
+## Portfolio Visualization Dashboard
+
+The system includes a web-based dashboard for monitoring bot performance and portfolio metrics in real-time.
+
+### Overview Dashboard
+
+The overview page displays a comprehensive table of all trading bots with key performance metrics:
+
+![Portfolio Overview](../overview.png)
+
+The dashboard shows:
+- **Current Worth**: Real-time portfolio value
+- **Total Return %**: Overall return since inception
+- **Annualized Return %**: Yearly return projection
+- **Sharpe Ratio**: Risk-adjusted return metric
+- **Sortino Ratio**: Downside risk-adjusted return
+- **Max Drawdown %**: Largest peak-to-trough decline
+- **Volatility %**: Portfolio price fluctuation
+- **Total Trades**: Number of executed trades
+- **Start Date**: Bot initialization date
+
+### Bot Detail Page
+
+Clicking on any bot from the overview opens a detailed performance page with:
+
+![Bot Detail Page](../detailpage.png)
+
+The detail page includes:
+- **Key Performance Indicators**: Total return, annualized return, Sharpe ratio, Sortino ratio, Calmar ratio, max drawdown, and volatility
+- **Portfolio Value Chart**: Time series visualization of portfolio value over time
+- **Daily Returns Distribution**: Histogram showing return frequency
+- **Monthly Returns Heatmap**: Calendar view of monthly performance
+- **Drawdown Chart**: Visual representation of portfolio drawdowns over time
+- **Current Holdings Table**: Real-time portfolio composition
+- **Trade History**: Complete log of all executed trades with pagination and search
+
+### Accessing the Dashboard
+
+The visualization dashboard is deployed as part of the Helm chart. After deployment, access it via the configured service URL. The dashboard uses HTTP Basic Authentication - credentials are configured via environment variables (`BASIC_AUTH_USERNAME` and `BASIC_AUTH_PASSWORD`).
+
 ## Next Steps
 
 - [PortfolioManager API](../api/portfolio-manager.md) - Complete API docs
 - [Database Models](../architecture/database-models.md) - Data structure
+- [Deployment Guide](../deployment/overview.md) - Setup instructions
